@@ -9,9 +9,24 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import { Help } from "@mui/icons-material";
 
+const isLoggedIn = () => {
+  return !!localStorage.getItem("accessToken"); // Return true if logged in
+};
+const PrivateRoute = ({ path, element }) => {
+  // const navigate = useNavigate();
+
+  if (!isLoggedIn()) {
+    // navigate("/Login"); // Redirect to the login page
+    return null; // prevent rendering the protected component
+  }
+
+  // If the user is logged in, render the protected component
+  return <Route path={path} element={element} />;
+};
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Public routes can be accessed without logIn */}
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="RegClient" element={<RegClient />} />
@@ -22,6 +37,11 @@ const AppRoutes = () => {
         <Route path="Contact/*" element={<Contact />}></Route>
         <Route path="FAQ/*" element={<FAQ />}></Route>
       </Route>
+
+      {/* Protected Routes */}
+      <PrivateRoute path="/" element={<RootLayout />}>
+        <Route path="clientRequest" element={<clientRequest />} />
+      </PrivateRoute>
     </Routes>
   );
 };

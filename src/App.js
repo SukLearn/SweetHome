@@ -13,9 +13,12 @@ import RegClient from "./Pages/RegClient";
 import RegOwner from "./Pages/RegOwner";
 import RegAgent from "./Pages/RegAgent";
 
-import Login from "./Pages/Login";
-import RegistrationForm from "./Pages/RegistrationForm";
-import Welcome from "./Pages/Welcome";
+import Login from "./Pages/Auth/Login";
+import RegistrationForm from "./Pages/Auth/RegistrationForm";
+
+import Client from "./Pages/Dashboards/Client/Client";
+import Owner from "./Pages/Dashboards/Owner";
+import Agent from "./Pages/Dashboards/Agent";
 
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -33,10 +36,10 @@ const router = createBrowserRouter(
       <Route path="RegClient" element={<RegClient />} />
       <Route path="RegOwner" element={<RegOwner />} />
       <Route path="RegAgent" element={<RegAgent />} />
-
-      <Route path="Welcome" element={<Welcome />} />
-
+      <Route path="Client" element={<Client />} />
+      <Route path="Owner" element={<Owner />} />
       <Route path="Login" element={<Login />} />
+      <Route path="Agent" element={<Agent />} />
       <Route path="about" element={<About />} />
       <Route path="RegistrationForm" element={<RegistrationForm />} />
       <Route path="help" element={<Help />}>

@@ -174,11 +174,9 @@ export default function SignUp() {
         formData
       );
       console.log("Registration successful:", response.data);
-      window.location.href = "http://localhost:3000/dashboardOwner";
-      // Handle success (e.g., redirect or show a success message)
+      window.location.href = "http://localhost:3000/login";
     } catch (error) {
       console.error("Registration error:", error);
-      // Handle error (e.g., show an error message)
     }
   };
   return (

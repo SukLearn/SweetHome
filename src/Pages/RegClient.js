@@ -41,15 +41,15 @@ function Copyright(props) {
 export default function SignUp() {
   // input fields
   const [formData, setFormData] = useState({
-    firstName: "asd",
-    lastName: "asd",
-    email: "asd@gmail.com",
+    firstName: "",
+    lastName: "",
+    email: "",
     password: "",
     MatchPassword: "",
-    gender: "MALE",
-    phone: "593141427",
-    nationality: "georgia",
-    age: "65",
+    gender: "",
+    phone: "",
+    nationality: "",
+    age: "",
   });
 
   // handling validation set error for required fields
@@ -174,7 +174,7 @@ export default function SignUp() {
         formData
       );
       console.log("Registration successful:", response.data);
-      window.location.href = "http://localhost:3000/dashboardOwner";
+      window.location.href = "http://localhost:3000/login";
       // Handle success (e.g., redirect or show a success message)
     } catch (error) {
       console.error("Registration error:", error);
