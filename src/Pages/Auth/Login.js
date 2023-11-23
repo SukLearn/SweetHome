@@ -14,7 +14,6 @@ import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Header from "../../Components/Header";
-import Welcome from "../Dashboards/Client/Client";
 function Copyright(props) {
   return (
     <Typography

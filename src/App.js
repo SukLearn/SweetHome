@@ -9,43 +9,41 @@ import {
 // Components
 
 // Pages
-import RegClient from "./Pages/RegClient";
-import RegOwner from "./Pages/RegOwner";
-import RegAgent from "./Pages/RegAgent";
+import RegClient from "./Pages/Auth/RegClient";
+import RegOwner from "./Pages/Auth/RegOwner";
+import RegAgent from "./Pages/Auth/RegAgent";
 
 import Login from "./Pages/Auth/Login";
 import RegistrationForm from "./Pages/Auth/RegistrationForm";
 
 import Client from "./Pages/Dashboards/Client/Client";
-import Owner from "./Pages/Dashboards/Owner";
-import Agent from "./Pages/Dashboards/Agent";
+import Owner from "./Pages/Dashboards/Owner/Owner";
+import Agent from "./Pages/Dashboards/Agent/Agent";
 
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import FAQ from "./Pages/FAQ";
 import Contact from "./Pages/Contact";
-
+import ClientRequest from "./Pages/Dashboards/Client/clientRequests";
+import ErrorPage from "./Pages/error-page";
 // Layouts
-import RootLayout from "./Layouts/RootLayout";
-import { Help } from "@mui/icons-material";
+import Layout from "./Layouts/Layout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="RegClient" element={<RegClient />} />
       <Route path="RegOwner" element={<RegOwner />} />
       <Route path="RegAgent" element={<RegAgent />} />
-      <Route path="Client" element={<Client />} />
+      <Route path="client" element={<Client />} />
+      <Route path="client/request" element={<ClientRequest />} />
       <Route path="Owner" element={<Owner />} />
       <Route path="Login" element={<Login />} />
       <Route path="Agent" element={<Agent />} />
       <Route path="about" element={<About />} />
       <Route path="RegistrationForm" element={<RegistrationForm />} />
-      <Route path="help" element={<Help />}>
-        <Route path="faq" element={<FAQ />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );

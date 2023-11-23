@@ -1,49 +1,72 @@
-import { Route, Routes } from "react-router-dom";
-import RootLayout from "./layouts/RootLayout";
-import Home from "./components/Home";
-import RegClient from "./components/RegClient";
-import Login from "./components/Login";
-import About from "./components/About";
-import RegistrationForm from "./components/RegistrationForm";
-import FAQ from "./components/FAQ";
-import Contact from "./components/Contact";
-import { Help } from "@mui/icons-material";
+import {
+  Route,
+  Routes,
+  useNavigate,
+  Navigate,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "../Pages/Home";
+import RegClient from "../Pages/Auth/RegClient";
+import Login from "../Pages/Auth/Login";
+import About from "../Pages/About";
+import FAQ from "../Pages/FAQ";
+import Contact from "../Pages/Contact";
+import Help from "../Pages/Help";
+import RegOwner from "../Pages/Auth/RegOwner";
+import RegAgent from "../Pages/Auth/RegAgent";
+import ErrorPage from "../Pages/error-page";
 
+import Client from "../Pages/Dashboards/Client/Client";
+import Owner from "../Pages/Dashboards/Owner/Owner";
+import Agent from "../Pages/Dashboards/Agent/Agent";
+
+const role = localStorage.getItem("useRole");
 const isLoggedIn = () => {
   return !!localStorage.getItem("accessToken"); // Return true if logged in
 };
-const PrivateRoute = ({ path, element }) => {
-  // const navigate = useNavigate();
+
+const PrivateRoute = ({ path, element, requiredRole }) => {
+  const navigate = useNavigate();
 
   if (!isLoggedIn()) {
-    // navigate("/Login"); // Redirect to the login page
-    return null; // prevent rendering the protected component
+    return <Navigate to="/401" />; // Redirect to the login page, prevent rendering the protected component
   }
 
+  if (role !== requiredRole) {
+    // navigate('/401');
+    return <Navigate to="/401" />;
+  }
   // If the user is logged in, render the protected component
   return <Route path={path} element={element} />;
 };
-const AppRoutes = () => {
-  return (
-    <Routes>
-      {/* Public routes can be accessed without logIn */}
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
-        <Route path="RegClient" element={<RegClient />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="about" element={<About />} />
-        <Route path="RegistrationForm" element={<RegistrationForm />} />
-        <Route path="help/*" element={<Help />}></Route>
-        <Route path="Contact/*" element={<Contact />}></Route>
-        <Route path="FAQ/*" element={<FAQ />}></Route>
-      </Route>
 
-      {/* Protected Routes */}
-      <PrivateRoute path="/" element={<RootLayout />}>
-        <Route path="clientRequest" element={<clientRequest />} />
-      </PrivateRoute>
-    </Routes>
-  );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/regClient",
+    element: <RegClient />,
+  },
+  {
+    path: "/regAgent",
+    element: <RegAgent />,
+  },
+  {
+    path: "/regOwner",
+    element: <RegOwner />,
+  },
+]);
+
+const AppRoutes = () => {
+  return <RouterProvider router={router} />;
 };
 
 export default AppRoutes;
