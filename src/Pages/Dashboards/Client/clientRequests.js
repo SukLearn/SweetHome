@@ -17,7 +17,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-home"
               >
@@ -37,7 +37,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-shopping-bag"
               >
@@ -58,7 +58,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-pie-chart"
               >
@@ -78,7 +78,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-inbox"
               >
@@ -98,7 +98,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-bell"
               >
@@ -126,7 +126,7 @@ const ClientRequest = () => {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 class="feather feather-more-horizontal"
               >
@@ -145,7 +145,7 @@ const ClientRequest = () => {
                 class="moon"
                 fill="none"
                 stroke="currentColor"
-                strokeCap="round"
+                stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 width="24"
@@ -172,7 +172,7 @@ const ClientRequest = () => {
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
-                    strokeCap="round"
+                    stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-filter"
                   >
@@ -205,7 +205,7 @@ const ClientRequest = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  strokeCap="round"
+                  stroke-linecap="round"
                   stroke-linejoin="round"
                   class="feather feather-list"
                 >
@@ -226,7 +226,7 @@ const ClientRequest = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  strokeCap="round"
+                  stroke-linecap="round"
                   stroke-linejoin="round"
                   class="feather feather-grid"
                 >
@@ -333,7 +333,7 @@ const ClientRequest = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  strokeCap="round"
+                  stroke-linecap="round"
                   stroke-linejoin="round"
                   class="feather feather-more-vertical"
                 >
@@ -372,7 +372,7 @@ const ClientRequest = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  strokeCap="round"
+                  stroke-linecap="round"
                   stroke-linejoin="round"
                   class="feather feather-more-vertical"
                 >
@@ -411,7 +411,7 @@ const ClientRequest = () => {
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  strokeCap="round"
+                  stroke-linecap="round"
                   stroke-linejoin="round"
                   class="feather feather-more-vertical"
                 >
